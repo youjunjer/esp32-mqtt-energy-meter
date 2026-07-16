@@ -1,0 +1,19 @@
+# Local credentials and secrets
+20_oled_show/secrets.h
+*.env
+
+# Local runtimes, installers, generated QA and temporary files
+.opencv/
+node-v*.msi
+結案報告_QA/
+結案報告_圖表/
+build_report.py
+inspect_report.py
+__pycache__/
+*.pyc
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
