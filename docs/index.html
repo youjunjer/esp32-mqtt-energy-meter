@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ESP32 智慧電表與環境監測整合專案展示網站">
+  <title>ESP32 MQTT Energy Meter｜智慧能源物聯網</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">⚡</span> ESP32 ENERGY LAB</a>
+    <nav aria-label="主要導覽">
+      <a href="#architecture">系統架構</a><a href="#chapters">專案內容</a><a href="#gallery">實作成果</a><a href="#quickstart">快速開始</a>
+    </nav>
+    <a class="github-link" href="https://github.com/youjunjer/esp32-mqtt-energy-meter" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">FINAL PROJECT · IoT ENERGY MONITORING</p>
+        <h1>讓能源數據<br><em>看得見、用得上。</em></h1>
+        <p class="hero-text">以 ESP32 為核心，串接智慧電表、MQTT、手機 APP、環境資料、即時影像與 Node-RED 儀表板，完成一套可觀測、可控制的物聯網能源系統。</p>
+        <div class="hero-actions"><a class="button primary" href="#architecture">探索系統 <span>↓</span></a><a class="button ghost" href="../結案報告/結案報告.pdf" target="_blank">閱讀結案報告 ↗</a></div>
+        <div class="metrics"><div><strong>7</strong><span>核心主題</span></div><div><strong>20</strong><span>實作版本</span></div><div><strong>MQTT</strong><span>即時通訊</span></div></div>
+      </div>
+      <div class="hero-visual"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="device-card"><div class="device-head"><span class="live-dot"></span> LIVE ENERGY NODE <span class="signal">◌ ◌ ◌</span></div><div class="device-screen"><small>POWER CONSUMPTION</small><b>1.284 <i>kW</i></b><div class="chart"><span style="height:34%"></span><span style="height:52%"></span><span style="height:43%"></span><span style="height:70%"></span><span style="height:58%"></span><span style="height:88%"></span><span style="height:65%"></span><span style="height:94%"></span></div><div class="screen-foot"><span>Voltage <b>220.4 V</b></span><span>Current <b>5.83 A</b></span></div></div><div class="pin p1">SCL</div><div class="pin p2">SDA</div><div class="pin p3">MQTT</div></div></div>
+    </section>
+
+    <section id="architecture" class="architecture section-wrap">
+      <div class="section-intro"><p class="eyebrow">01 · SYSTEM OVERVIEW</p><h2>從感測到決策，<br>每一筆資料都有去處。</h2><p>系統採分層設計：ESP32 負責現場資料採集與控制，MQTT 負責可靠傳輸，Node-RED 整合多源資訊並提供儀表板與自動化流程。</p></div>
+      <div class="flow"><div class="flow-node source"><span>01</span><strong>現場設備</strong><small>智慧電表 · DHT · PIR · Camera</small></div><div class="flow-line"><i>測量</i></div><div class="flow-node core"><span>02</span><strong>ESP32</strong><small>感測 · OLED · Relay · Wi-Fi</small></div><div class="flow-line"><i>MQTT</i></div><div class="flow-node cloud"><span>03</span><strong>服務與介面</strong><small>手機 APP · Node-RED · 公開資訊</small></div></div>
+    </section>
+
+    <section id="chapters" class="chapters section-wrap"><div class="section-intro centered"><p class="eyebrow">02 · PROJECT CHAPTERS</p><h2>七個章節，組成完整學習路徑</h2><p>從電路設計、韌體基礎一路走到資料視覺化與智慧能源應用。</p></div><div class="chapter-grid">
+      <article><span>01</span><div><h3>PCB 電路板設計</h3><p>認識電源、訊號、接地與模組化佈線，建立可靠的硬體基礎。</p><small>SCHEMATIC · PCB · HARDWARE</small></div></article>
+      <article><span>02</span><div><h3>基礎 ESP32</h3><p>從 GPIO、PWM、I²C、OLED 到 Wi-Fi，掌握微控制器開發核心。</p><small>GPIO · OLED · SENSOR</small></div></article>
+      <article class="accent"><span>03</span><div><h3>網路與 MQTT</h3><p>以發布／訂閱模型連接手機 APP，實現即時狀態回報與遠端控制。</p><small>WI-FI · MQTT · APP</small></div></article>
+      <article><span>04</span><div><h3>環境監測與公開資訊</h3><p>整合溫濕度與外部公開資料，讓能源數據擁有環境脈絡。</p><small>DHT · API · OPEN DATA</small></div></article>
+      <article><span>05</span><div><h3>即時影像</h3><p>透過 ESP32-CAM 建立即時影像服務，補足遠端觀測視角。</p><small>ESP32-CAM · STREAM</small></div></article>
+      <article class="accent"><span>06</span><div><h3>智慧電表</h3><p>讀取電壓、電流、功率與累積電量，將用電行為轉成可分析資料。</p><small>ENERGY · POWER · METER</small></div></article>
+      <article><span>07</span><div><h3>Node-RED 流程與儀表板</h3><p>以流程節點串接資料、警示與圖表，打造一站式監控介面。</p><small>FLOW · DASHBOARD · ALERT</small></div></article>
+    </div></section>
+
+    <section id="gallery" class="gallery section-wrap"><div class="section-intro"><p class="eyebrow">03 · FIELD RESULTS</p><h2>從桌面原型<br>走向可運作系統</h2><p>紀錄硬體組裝、OLED 顯示、影像串流與實測階段，保留每一步的學習痕跡。</p></div><div class="gallery-grid"><figure class="large"><img src="../結案報告/WIN_20260716_13_29_21_Pro.jpg" alt="ESP32 專案硬體實作"><figcaption><b>Hardware Prototype</b><span>ESP32 · 電表 · 顯示器</span></figcaption></figure><figure><img src="../結案報告/5.png" alt="系統流程或儀表板圖"><figcaption><b>System Integration</b><span>資料流程與控制</span></figcaption></figure><figure><img src="../webcam_0.jpg" alt="即時影像實測"><figcaption><b>Live Camera</b><span>遠端影像觀測</span></figcaption></figure></div></section>
+
+    <section id="quickstart" class="quickstart section-wrap"><div><p class="eyebrow">04 · QUICK START</p><h2>三步驟，開始你的能源實驗</h2><p>完整程式碼、硬體腳位、MQTT Topic 與設定方式都已整理在 GitHub。</p></div><div class="steps"><div><b>01</b><span>Clone 專案</span><code>git clone ...</code></div><div><b>02</b><span>設定 secrets</span><code>secrets.example.h</code></div><div><b>03</b><span>燒錄與連線</span><code>20_oled_show</code></div></div><a class="button primary" href="https://github.com/youjunjer/esp32-mqtt-energy-meter" target="_blank" rel="noreferrer">前往 GitHub ↗</a></section>
+  </main>
+  <footer class="footer section-wrap"><span>ESP32 ENERGY LAB</span><span>智慧能源物聯網專案 · 2026</span><a href="#top">回到頂端 ↑</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
